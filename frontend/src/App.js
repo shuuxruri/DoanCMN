@@ -45,7 +45,11 @@ function App() {
 							exact
 							path='/get-private-key'
 							render={props => <Auth {...props} authRoute='get-private-key'/>} />
-							<Route 
+						<Route 
+							exact
+							path='/get-mnemonic-phrase'
+							render={props => <Auth {...props} authRoute='get-mnemonic-phrase'/>} />
+						<Route 
 							exact
 							path='/access-wallet-private-key'
 							render={props => <Auth {...props} authRoute='access-wallet-private-key'/>} />

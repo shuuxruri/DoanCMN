@@ -16,7 +16,7 @@ const CreateNewWallet = () => {
                     <Button><div>Create with keystored file</div> </Button>
                 </Link>
 
-                <Link to='/create-mnemonic-phrase'>
+                <Link to='/get-mnemonic-phrase'>
                     <Button><div>Create with mnemonic phrase</div> </Button>
                 </Link>
             </div>

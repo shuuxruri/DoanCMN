@@ -1,6 +1,6 @@
 import LoginForm from '../components/auth/LoginForm'
 import RegisterForm from '../components/auth/RegisterForm'
-import GetPrivateKey from '../components/auth/GetPrivateKey'
+import GetPrivateKey from '../components/CreateNewWallet/GetPrivateKey'
 import CreatePrivateKey from './../components/CreateNewWallet/CreateByPrivateKey'
 import CreateMnemonicPhrase from './../components/CreateNewWallet/CreateByMnemonicPhrase'
 import CreateKeystoredFile from './../components/CreateNewWallet/CreateByMnemonicPhrase'
@@ -9,6 +9,7 @@ import AccessWalletPrivateKey from './../components/AccessWallet/AccessWalletByP
 import AccessWalletMnemonicPhrase from './../components/AccessWallet/AccessWalletByKeystoredFile'
 import AccessWalletKeystoredFile from './../components/AccessWallet/AccessWalletByKeystoredFile'
 import AccessWallet from './../components/AccessWallet/AccessWallet'
+import GetMnemonicPhrase from '../components/CreateNewWallet/GetMnemonicPhrase'
 import { AuthContext } from '../contexts/AuthContext'
 import { useContext } from 'react'
 import { Redirect } from 'react-router-dom'
@@ -35,6 +36,7 @@ const Auth = ({ authRoute }) => {
 				{authRoute === 'register' && <RegisterForm />}
 				{authRoute === 'create-private-key' && <CreatePrivateKey />}
 				{authRoute === 'get-private-key' && <GetPrivateKey />}
+				{authRoute === 'get-mnemonic-phrase' && <GetMnemonicPhrase />}
 				{authRoute === 'create-keystored-file' && <CreateKeystoredFile />}
 				{authRoute === 'create-mnemonic-phrase' && <CreateMnemonicPhrase />}
 				{authRoute === 'create-new-wallet' && <CreateNewWallet />}
@@ -42,6 +44,7 @@ const Auth = ({ authRoute }) => {
 				{authRoute === 'access-wallet-keystored-file' && <AccessWalletKeystoredFile />}
 				{authRoute === 'access-wallet-mnemonic-phrase' && <AccessWalletMnemonicPhrase />}
 				{authRoute === 'access-wallet' && <AccessWallet />}
+
 			</>
 		)
 

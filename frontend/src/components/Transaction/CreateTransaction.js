@@ -102,17 +102,36 @@ const CreateTransaction = () => {
 		setShowToast
 	} = useContext(PostContext)
 
+	const getWallet = async (Mnemonic) => {
+		try {
+			const wallet =  await KardiaAccount.getWalletFromMnemonic(Mnemonic)
+			// console.log('wallet private_key: ',wallet)
+			//Get KAI balance of a wallet == getKaiBalance
+			getKaiBalance(wallet.address);
+			setWallet( wallet);
+			// console.log('balance : ',balance)
+			// console.log('wallet Mnemonic: ',wallet.privateKey)
+			getKaiBalance(wallet.address);
+			setWallet( wallet);
+        }
+        catch(error) {
+            console.log("error: ", error)
+        }  
+	}
 	// Start: Get all posts
 	useEffect(() => getPosts(), [])
 	useEffect( () => {
-		const wallet = KardiaAccount.getWalletFromPK(private_key);
-		
-		//Get KAI balance of a wallet == getKaiBalance
-		getKaiBalance(wallet.address);
-        setWallet( wallet);
-		console.log('balance : ',balance)
-		console.log('wallet : ',wallet)
-
+		if (private_key.length === 66) {
+			const wallet = KardiaAccount.getWalletFromPK(private_key);
+			// console.log('wallet private_key: ',wallet)
+			//Get KAI balance of a wallet == getKaiBalance
+			getKaiBalance(wallet.address);
+			setWallet( wallet);
+			// console.log('balance : ',balance)
+		}
+		else {
+			getWallet(private_key)
+		}
     }, []);
 	
 	let body = null

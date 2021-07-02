@@ -13,7 +13,7 @@ const LoginForm = () => {
 	 				<Button variant='info' size='sm' className='ml-2'>
 	 					Register
 	 				</Button>
-	 			</Link>
+	 		</Link>
 		</div>
 	)
 
