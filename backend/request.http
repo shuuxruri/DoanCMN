@@ -1,0 +1,58 @@
+POST  http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "private_key": "hoannguyen2",
+    "password": "hoannguyen"
+}
+###
+POST  http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "private_key": "hoannguyen12",
+    "password": "abcd"
+}
+
+
+#####
+POST  http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiO…2OTB9.kNHcvQ-FL9W45HF7alPu5iyTq4cBHyeCUW0sVtf52es
+
+{
+    "address": "hoannguy3732742",
+    "balance": 0
+}
+
+###
+PUT  http://localhost:5000/api/posts/60d6fae4540ff132c486fb82
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGQ2ZWE0ZGVlMmZkMjBkYjhmMDg1YTUiLCJpYXQiOjE2MjQ4NTE0NjV9.wsi2spiAIjpwCJ71lrz9ddrY4mDvbEEfVexk14Kn6W8
+
+{
+    "address": "update",
+    "balance": 5000
+}
+###
+DELETE  http://localhost:5000/api/posts/60d6ea63ee2fd20db8f085ac
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGQ2ZWE0ZGVlMmZkMjBkYjhmMDg1YTUiLCJpYXQiOjE2MjQ2OTc0Mjl9.Ycjgn_dgF9xTTi0M1_DC_5SXAy8loDYDZkXcdxKK09E
+
+
+###
+
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGQ2ZWE0ZGVlMmZkMjBkYjhmMDg1YTUiLCJpYXQiOjE2MjQ4NjI2OTB9.kNHcvQ-FL9W45HF7alPu5iyTq4cBHyeCUW0sVtf52es
+###
+POST  https://rpc.kardiachain.io/
+Content-Type: application/json
+
+{
+    "jsonrpc": "2.0",
+    "method": "account_balance",
+    "params": [
+        "0xf64C35a3d5340B8493cE4CD988B3c1e890B2bD68",
+        "latest"
+    ],
+    "id": 1
+}
